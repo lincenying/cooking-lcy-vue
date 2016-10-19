@@ -1,26 +1,12 @@
 # cooking-lcy-vue
 
-> A cooking plugin to extend vue config.
+> 一个cooking插件扩展vue配置.
 > 集成less, sass, postcss, 也可以支持stylus和styl, 不过loader请自行安装
 
 使用方法:
 ```
 {
   extends: ['lcy-vue', 'eslint'] // 使用lcy-vue后无需再用less, sass
-}
-```
-
-postcss配置参考官方
-
-css配置:
-```
-{
-  css: '-autoprefixer'
-}
-```
-```
-{
-  css: ['-autoprefixer', 'other']
 }
 ```
 

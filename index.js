@@ -23,7 +23,6 @@ module.exports = function(cooking) {
     cooking.config.resolve.extensions.push('.vue')
 
     var plugins = cooking.config.postcss
-    var css = cooking._userConfig.css
 
     if (Array.isArray(plugins)) {
         cooking.config.vue.postcss = function(webpack) {
@@ -39,7 +38,6 @@ module.exports = function(cooking) {
     },
     cooking.config.vue.loaders,
     utils.cssLoader({
-        css: css,
         postcss: plugins,
         sourceMap: SOURCE_MAP ? '#source-map' : false,
         extract: !!cooking.config.extractCSS
@@ -48,16 +46,10 @@ module.exports = function(cooking) {
     // 删除cooking配置的各种css加载器
     moduleLoaders = cooking.config.module.loaders
     moduleLoaders.css && delete moduleLoaders.css
-    moduleLoaders.less && delete moduleLoaders.less
-    moduleLoaders.sass && delete moduleLoaders.sass
-    moduleLoaders.scss && delete moduleLoaders.scss
-    moduleLoaders.stylus && delete moduleLoaders.stylus
-    moduleLoaders.styl && delete moduleLoaders.styl
 
     cooking.config.module.loaders = Object.assign({},
     moduleLoaders,
     utils.styleLoaders({
-        css: css,
         postcss: plugins,
         sourceMap: SOURCE_MAP ? '#source-map' : false,
         extract: !!cooking.config.extractCSS

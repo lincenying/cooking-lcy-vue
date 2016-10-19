@@ -1,6 +1,6 @@
 {
   "name": "cooking-lcy-vue",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A cooking plugin to extend vue config.",
   "main": "index.js",
   "scripts": {

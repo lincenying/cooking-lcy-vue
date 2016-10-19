@@ -34,16 +34,7 @@ exports.cssLoader = function(options) {
             return ['vue-style-loader', sourceLoader].join('!')
         }
     }
-    var cssConfig = []
-    if (options.css) {
-        if (isArray(options.css)) {
-            cssConfig = ['css?' + options.css.join('&')]
-        } else {
-            cssConfig = ['css?' + options.css]
-        }
-    } else {
-        cssConfig = ['css']
-    }
+    var cssConfig = ['css']
     if (options.postcss) {
         cssConfig = cssConfig.concat(['postcss'])
     }
